@@ -1,3 +1,4 @@
+"use strict";
 let tableaux = ["test", 42, 0.0];
 tableaux.push("second test");
 console.log(tableaux.indexOf("test"));
