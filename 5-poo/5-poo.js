@@ -1,4 +1,29 @@
 "use strict";
+class Product {
+  constructor(name = "", quantity = 0, price = 0.0) {
+    this.name = name;
+    this.quantity = quantity;
+    this.price = price;
+  }
+}
+class Cart {
+  constructor(customer = "", products = []) {
+    this.customer = customer;
+    this.products = products;
+  }
+  addProduct(product) {
+    if (!this.products.includes(product)) {
+      this.products.push(product);
+    }
+  }
+  getTotal() {
+    let total = 0;
+    for (let i = 0; i < this.products.length; i++) {
+      total = total + this.products[i].price;
+    }
+    return total;
+  }
+}
 
 let beanie = new Product();
 beanie.name = "Un bonnet bien chaud";
