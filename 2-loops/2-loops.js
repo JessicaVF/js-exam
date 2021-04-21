@@ -8,16 +8,18 @@ let shoes = [
   "Hadès méga-dark",
 ];
 let i = 0;
-console.log("loop while");
 while (i < shoes.length) {
   console.log(shoes[i]);
-  i++;
+  i = i + 1;
 }
-console.log("loop for");
-for (let j = 0; 0 < shoes.length; j++) {
+for (let j = 0; j < shoes.length; j++) {
   console.log(shoes[j]);
 }
-console.log("loop for in");
-for (shoe in shoes) {
+shoes.forEach(function (shoe) {
   console.log(shoe);
+});
+let nombre = prompt("Donnez moi un nombre entre 0 et 4");
+while (isNaN(nombre) || nombre < 0 || nombre > 4) {
+  nombre = prompt("Donnez moi un nombre entre 0 et 4");
 }
+console.log(shoes[nombre]);
